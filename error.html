@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Redirecting...</title>
+    <script>
+        // Extract subdomain from the current hostname
+        const host = window.location.hostname;
+        const subdomain = host.split('.')[0];
+
+        // Redirect logic
+        if (subdomain && subdomain !== 'www' && subdomain !== 'diskrot') {
+            window.location.href = `https://profiles.diskrot.com/${subdomain}/index.html`;
+        } else {
+            window.location.href = '/';
+        }
+    </script>
+</head>
+<body>
+    <p>Redirecting...</p>
+</body>
+</html>
