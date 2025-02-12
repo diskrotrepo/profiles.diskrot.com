@@ -3,7 +3,7 @@ DiskRot Profiles allow users of diskrot to have their own custom subdomain on di
 
 # Add Profile
 
-1. Clone this repo: `git clone https://github.com/diskrotrepo/profiles.diskrot.com.git`
+1. Fork this repo
 2. Create a new folder with your username. This folder should be all lowercase, and include only alphanumeric characters (a-z,0-9), no special charaters are allowed.
 3. Add an `index.html` file within your folder
 4. Submit a pull request (PR) against the `main` branch with your changes
@@ -11,7 +11,7 @@ DiskRot Profiles allow users of diskrot to have their own custom subdomain on di
 
 # Update Profile
 
-1. Clone this repo: `git clone https://github.com/diskrotrepo/profiles.diskrot.com.git`
+1. Fork this repo
 2. Create a new folder with your username. This folder should be all lowercase, and include only alphanumeric characters (a-z,0-9), no special charaters are allowed.
 3. Update the `index.html` file within your folder
 4. Submit a pull request (PR) against the `main` branch with your changes
@@ -19,7 +19,7 @@ DiskRot Profiles allow users of diskrot to have their own custom subdomain on di
 
 # Remove Profile
 
-1. Clone this repo: `git clone https://github.com/diskrotrepo/profiles.diskrot.com.git`
+1. Fork this repo
 2. Delete a folder with your username. 
 4. Submit a pull request (PR) against the `main` branch with your changes
 5. Once your PR is approved it will be merged an automatically deployed to <username>.diskrot.com
