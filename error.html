@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Redirecting...</title>
@@ -8,15 +9,37 @@
         const host = window.location.hostname;
         const subdomain = host.split('.')[0];
 
-        // Redirect logic
+        // Only perform this check for certain subdomains
         if (subdomain && subdomain !== 'www' && subdomain !== 'diskrot') {
-            window.location.href = `https://profiles.diskrot.com/${subdomain}/index.html`;
+            const url = `https://profiles.diskrot.com/${subdomain}/index.html`;
+
+            // Use fetch with the HEAD method to check if the file exists
+            fetch(url, {method: 'HEAD'})
+                .then(response => {
+                    if (response.ok) {
+                        // File exists; redirect
+                        window.location.href = url;
+                    } else {
+                        // File does not exist; handle the error
+                        console.error(`Error: ${url} not found (status: ${response.status}).`);
+                        // Optionally, display an error message to the user
+                        document.body.innerHTML = '<p>Sorry, the requested profile does not exist.</p>';
+                    }
+                })
+                .catch(error => {
+                    // Network error or other issues
+                    console.error('Error while checking file existence:', error);
+                    document.body.innerHTML = '<p>An error occurred while trying to load the profile.</p>';
+                });
         } else {
+            // Fallback if subdomain conditions are not met
             window.location.href = '/';
         }
     </script>
 </head>
+
 <body>
-    <p>Redirecting...</p>
+    <p></p>
 </body>
+
 </html>
