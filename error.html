@@ -8,9 +8,10 @@
         // Extract subdomain from the current hostname
         const host = window.location.hostname;
         const subdomain = host.split('.')[0];
+        const approvedDomains = ['yolkhead', 'kakermix', 'alexayers'];
 
         // Only perform this check for certain subdomains
-        if (subdomain && subdomain !== 'www' && subdomain !== 'diskrot') {
+        if (subdomain && subdomain !== 'www' && subdomain !== 'diskrot' && approvedDomains.includes(subdomain)) {
             const url = `https://profiles.diskrot.com/${subdomain}/index.html`;
 
             // Use fetch with the HEAD method to check if the file exists
